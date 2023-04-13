@@ -16,6 +16,8 @@ class KeyGeneration:
         self.e = 0
         self.d = 0
         self.n = 0
+        self.p = 0
+        self.q = 0
         self.bitsNum = bitsNum
 
     def generateRandomKey(self):
@@ -31,3 +33,5 @@ class KeyGeneration:
         self.e = e_num
         self.d = d_num
         self.n = n_num
+        self.p = p_num
+        self.q = q_num

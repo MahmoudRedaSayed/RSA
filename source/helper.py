@@ -43,10 +43,6 @@ def isPrime(n):
 
 
 def getPrime(bitsNum):
-    '''p = random.getrandbits(bitsNum)
-    while not isPrime(p):
-        p = random.getrandbits(bitsNum)
-    return p'''
     p = sympy.randprime(2 ** (bitsNum - 1), 2 ** bitsNum - 1)
     return p
 
@@ -56,5 +52,14 @@ def getPrime(bitsNum):
 def encryption_Decryption(encodedPlaintext, e, n):
     ciphertext = []
     for i in range(len(encodedPlaintext)):
-        ciphertext.append(pow(alph_Mapping[encodedPlaintext[i]], e, n))
+        ciphertext.append(pow(int(encodedPlaintext[i]), e, n))
     return ciphertext
+
+def factorize(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            factor1 = i
+            factor2 = n // i
+            if isPrime(factor1) and isPrime(factor2):
+                return factor1, factor2
+    return None

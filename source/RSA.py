@@ -7,8 +7,7 @@ from random import randint
 class RSA:
 
     def __init__(self):
-        print("new object")
-    
+        pass
 
 
     def encryption(self,message):
@@ -21,14 +20,11 @@ class RSA:
         else:
             for i in range(5-num):
                 message+=" "
-        print(len(message))
         for i in range((len(message)//5)):
                 value=0
                 for j in range(5):
-                    print(message[i*5+j],4-j)
                     value+=alph_Mapping[message[i*5+j]]*pow(37, 4-j)
                 packets.append(value)
-        print(packets)
         return packets
     
 
